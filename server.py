@@ -2,7 +2,7 @@ import sys
 from time import sleep, localtime
 from weakref import WeakKeyDictionary
 
-from PodSixNet import *
+import PodSixNet
 
 class ClientChannel(PodSixNet.Channel.Channel):
     """
