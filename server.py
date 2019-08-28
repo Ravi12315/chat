@@ -2,11 +2,9 @@ import sys
 from time import sleep, localtime
 from weakref import WeakKeyDictionary
 
-from PodSixNet.Server import Server
-from PodSixNet.Channel import Channel
+from PodSixNet import *
 
-
-class ClientChannel(Channel):
+class ClientChannel(PodSixNet.Channel.Channel):
     """
     This is the server representation of a single connected client.
     """
@@ -30,7 +28,7 @@ class ClientChannel(Channel):
         self._server.SendPlayers()
 
 
-class ChatServer(Server):
+class ChatServer(PodSixNet.Server.Server):
     channelClass = ClientChannel
 
     def __init__(self, *args, **kwargs):
